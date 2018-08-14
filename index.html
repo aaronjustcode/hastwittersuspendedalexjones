@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Has Twitter suspended Alex Jones?</title>
+</head>
+<body>
+  <div>
+    <div id="response">
+      
+    </div>
+  </div>  
+  <script type="text/javascript">
+    window.onload = function() {
+      document.getElementById('response').innerHtml = "foo";
+      CallWebAPI();
+
+      function CallWebAPI() {
+        var request = new XMLHttpRequest();
+        request.open("get", "https://alexjones.justcode.co", false);
+        request.send();
+        document.getElementById('response').innerHtml = request.responseText;
+        if (request.responseText == 'active') {
+          document.getElementById('response').innerHTML = '<p>NO<br>because <a href="https://twitter.com/jack">@jack</a> is a coward</p>';
+        } else {
+          document.getElementById('response').innerHTML = '<p>YES<br><a href="https://twitter.com/RealAlexJones">Confirm →</a></p>';
+        }
+      }
+    }
+  </script>
+</body>
+</html>
