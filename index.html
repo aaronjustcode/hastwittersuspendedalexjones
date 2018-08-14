@@ -5,13 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Has Twitter suspended Alex Jones?</title>
+  <style>
+    body,html {
+      margin: 0;
+      padding: 0;
+    }
+    #response {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    #response p {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 8em;
+      font-weight: bold;
+      margin: auto;
+      padding: 0;
+      text-align: center;
+    }
+    @media all and (min-width:22.5em) {
+      #response p {
+        font-size: 10em;
+      }
+    }
+    #response p span {
+      display: block;
+      font-size: .15em;
+      font-weight: normal;
+    }
+  </style>
 </head>
 <body>
-  <div>
-    <div id="response">
-      
-    </div>
-  </div>  
+  <div id="response">
+    
+  </div>
   <script type="text/javascript">
     window.onload = function() {
       document.getElementById('response').innerHtml = "foo";
@@ -23,9 +50,9 @@
         request.send();
         document.getElementById('response').innerHtml = request.responseText;
         if (request.responseText == 'active') {
-          document.getElementById('response').innerHTML = '<p>NO<br>because <a href="https://twitter.com/jack">@jack</a> is a coward</p>';
+          document.getElementById('response').innerHTML = '<p>NO <span>because <a href="https://twitter.com/jack">@jack</a> is a coward</span></p>';
         } else {
-          document.getElementById('response').innerHTML = '<p>YES<br><a href="https://twitter.com/RealAlexJones">Confirm →</a></p>';
+          document.getElementById('response').innerHTML = '<p>YES<br> <span><a href="https://twitter.com/RealAlexJones">Confirm →</a></span></p>';
         }
       }
     }
